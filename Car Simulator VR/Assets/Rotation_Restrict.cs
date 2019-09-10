@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Rotation_Restrict : MonoBehaviour {
 
-    public float x, y, z;
+    public float x;
+    float y, z;
+      
 	// Use this for initialization
 	void Start () {
 		
@@ -15,22 +17,36 @@ public class Rotation_Restrict : MonoBehaviour {
         Debug.Log(transform.eulerAngles.x + " - " + transform.eulerAngles.y + " - " + transform.eulerAngles.z);
 
 
-        if (transform.eulerAngles.y != y || transform.eulerAngles.z != z)
-        {
-            if (x > 271 && x < 280)
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, y, z);
-            else
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, z, y);
-        }
-
         OVRGrabbable sn = gameObject.GetComponent<OVRGrabbable>();
+
         if (!sn.isGrabbed)
         {
             transform.eulerAngles = new Vector3(x, 180, 180);
         }
         else
         {
-            Debug.Log(sn.grabbedRigidbody );
+            if (sn.getName.name.ToString() == "CustomHandLeft")
+            {
+                y = 270;
+                z = 90;
+            }
+            else
+            {
+                y = 90;
+                z = 270;
+            }
         }
+        
+
+        if (transform.eulerAngles.y != y || transform.eulerAngles.z != z)
+        {
+                
+                    transform.eulerAngles = new Vector3(transform.eulerAngles.x, y, z);
+                
+
+        }
+
+      
+      
     }
 }
