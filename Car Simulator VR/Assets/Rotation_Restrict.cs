@@ -14,7 +14,7 @@ public class Rotation_Restrict : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(transform.eulerAngles.x + " - " + transform.eulerAngles.y + " - " + transform.eulerAngles.z);
+      //  Debug.Log(transform.eulerAngles.x + " - " + transform.eulerAngles.y + " - " + transform.eulerAngles.z);
 
 
         OVRGrabbable sn = gameObject.GetComponent<OVRGrabbable>();

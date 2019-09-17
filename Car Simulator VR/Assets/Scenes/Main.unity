@@ -1467,8 +1467,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   x: -90
-  y: 90
-  z: 270
 --- !u!64 &1061746797
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2773,7 +2771,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 8330ab40bd32da048b03c28c5927cf65, type: 2}
+  - {fileID: 2100000, guid: a614600ea46274549a3f4246ab10d890, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
