@@ -43,7 +43,7 @@ using System.Collections;
 
 public class video_streaming : MonoBehaviour
 {
-    public string url = "http://192.168.43.80:8000";
+    public string url = "https://docs.unity3d.com/uploads/Main/ShadowIntro.png";
 
     IEnumerator Start()
     {
