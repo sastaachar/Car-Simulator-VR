@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 90655716}
   - component: {fileID: 90655715}
   - component: {fileID: 90655714}
+  - component: {fileID: 90655718}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -306,12 +307,26 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 90655713}
   m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -4.11, y: 6.725, z: 1.525}
+  m_LocalPosition: {x: -4.11, y: 6.94, z: 1.525}
   m_LocalScale: {x: 3.3894, y: 1.2489, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
+--- !u!114 &90655718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 90655713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db80178c847bb06468946c207413f272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  streamAddress: http://192.168.43.80:8000/stream.mjpg
+  showFps: 0
+  chunkSize: 4
 --- !u!1 &100270466 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100008, guid: ce816f2e6abb0504092c23ed9b970dfd,
