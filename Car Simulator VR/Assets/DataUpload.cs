@@ -17,7 +17,7 @@ public class DataUpload : MonoBehaviour
     // "connection" things
     IPEndPoint remoteEndPoint;
     UdpClient client;
-    OVRGrabbable sn;
+
     public GameObject streering;
     string direction;
 
@@ -26,9 +26,7 @@ public class DataUpload : MonoBehaviour
     {
         print("UDPSend.init()");
 
-        // define the ip and port 
-        IP = "127.0.0.1";
-        port = 8051;
+      
 
         // ----------------------------
         // create the connection
@@ -40,16 +38,17 @@ public class DataUpload : MonoBehaviour
         print("Sending to " + IP + " : " + port);
         print("Testing: nc -lu " + IP + " : " + port);
 
-        //grabber object to check which han is grabbed
-        sn = gameObject.GetComponent<OVRGrabbable>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //grabber object to check which han is grabbed
+        OVRGrabbable sn = gameObject.GetComponent<OVRGrabbable>();
 
         //if not grabbed move back to initial
-
+       
         if (!sn.isGrabbed)
         {
             //dont drive
@@ -65,7 +64,7 @@ public class DataUpload : MonoBehaviour
                 //drive no turn 
                 sendData("forward");
             }
-            else if (OVRInput.Get(OVRInput.Button.One))
+            else if (OVRInput.Get(OVRInput.Button.Three))
             {
                 //reverse 
                 sendData("reverse");
@@ -73,13 +72,13 @@ public class DataUpload : MonoBehaviour
             else
             {
                 //turn left 
-                if (streering.transform.eulerAngles.y == 90)
+                if (sn.getName.name.ToString() == "CustomHandLeft")
                 {
-                    sendData("right");
+                    sendData("left");
                 }
                 else
                 {
-                    sendData("left");
+                    sendData("right");
                 }
             }
         }
@@ -94,6 +93,7 @@ public class DataUpload : MonoBehaviour
             byte[] data = Encoding.UTF8.GetBytes(message);
 
             // send data to the created client
+            print(message+"\n");
             client.Send(data, data.Length, remoteEndPoint);
 
         }
